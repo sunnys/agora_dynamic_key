@@ -24,7 +24,7 @@ module AgoraDynamicKey
       @uid = "#{args.fetch(:uid, "")}"
       @privileges = {}
       @privilege_expired_ts = args[:privilege_expired_ts]
-      @salt = SecureRandom.rand(SEED)
+      @salt = srand(SEED)
       @expired_ts = Time.now.to_i + ONE_DAY
     end
 
